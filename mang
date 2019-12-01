@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class phuong_thuc {
+    public static int[] nhapMang(int n){
+        System.out.println("Nhập " + n +" phần tử:");
+        Scanner scanner = new Scanner(System.in);
+        int[] mang = new int[n];
+        for (int i = 0; i < n; i++) {
+            mang[i] = scanner.nextInt();
+
+        }
+        return mang;
+    }
+   public static int max(int[] mang) {
+        int max = mang[0];
+        for (int i = 1; i < mang.length ; i++) {
+            if (max < mang[i]) max = mang[i];
+        }
+        return max;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] mang1,mang2,mang3;
+        int n1 = 5, n2 = 7, n3 = 9;
+        mang1 = nhapMang(n1);
+        mang2 = nhapMang(n2);
+        mang3 = nhapMang(n3);
+        for (int i = 0; i < n1; i++) {
+            System.out.print(mang1[i]+"\t");
+        }
+        System.out.println();
+        for (int i = 0; i < n2; i++) {
+            System.out.print(mang2[i]+"\t");
+        }
+        System.out.println();
+        for (int i = 0; i < n3; i++) {
+            System.out.print(mang3[i]+"\t");
+        }
+        System.out.println(max(mang1));
+        System.out.println(max(mang2));
+        System.out.println(max(mang3));
+    }
+}
